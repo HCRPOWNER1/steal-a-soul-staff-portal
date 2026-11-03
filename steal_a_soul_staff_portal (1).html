@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steal a Soul | Staff Portal</title>
+<style>
+:root{--bg:#09080d;--panel:#121019;--panel2:#191522;--line:#292333;--text:#f5f1fa;--muted:#a69caf;--purple:#9b5cff;--purple2:#6c35c9;--red:#ff526d;--green:#42d6a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#32164c 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 Inter,Segoe UI,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:250px;background:#0d0b12;border-right:1px solid var(--line);padding:24px 16px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:12px;padding:4px 8px 26px}.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(145deg,#b46aff,#5420a3);display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 0 25px #8d43e955}.brand b{display:block;font-size:14px;letter-spacing:1.2px}.brand small{color:var(--muted);font-size:10px;letter-spacing:2px}.nav-label{color:#746b7f;font-size:10px;font-weight:800;letter-spacing:1.5px;padding:12px 10px 8px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#b9b1c4;text-align:left;padding:11px 12px;border-radius:10px;display:flex;align-items:center;gap:12px}.nav button:hover,.nav button.active{background:linear-gradient(90deg,#8b4be52b,#8b4be50a);color:#fff}.nav button.active{box-shadow:inset 3px 0 var(--purple)}.ico{width:20px;text-align:center;color:#bd8aff;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding:16px 8px 0}.profile{display:flex;align-items:center;gap:10px}.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#bd74ff,#5729a5);display:grid;place-items:center;font-weight:800}.profile small{display:block;color:var(--muted);font-size:11px}.main{margin-left:250px;width:calc(100% - 250px);padding:28px 34px 50px;max-width:1600px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.eyebrow{color:#b88aff;font-size:11px;letter-spacing:2px;font-weight:800}.topbar h1{font-size:26px;margin:4px 0 0}.top-actions{display:flex;gap:10px;align-items:center}.status{border:1px solid #285c4a;background:#123226;color:#6ee5b6;padding:7px 11px;border-radius:30px;font-size:11px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:9px}.btn:hover{border-color:#8551c8}.btn.primary{background:linear-gradient(135deg,#9856ed,#6d36c5);border:0;box-shadow:0 5px 18px #7b42d533}.btn.danger{background:#421d2a;border-color:#713044;color:#ff9aaa}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:linear-gradient(145deg,#17131f,#100e16);border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 10px 30px #0002}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:34px;height:34px;border-radius:10px;background:#8e4ce522;color:#c99aff;display:grid;place-items:center;font-size:17px}.stat-number{font-size:27px;font-weight:800;margin:12px 0 2px}.stat-foot{font-size:11px;color:#8d8498}.content-grid{grid-template-columns:1.5fr 1fr}.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.card h2{font-size:15px;margin:0}.muted{color:var(--muted)}.activity{display:grid;gap:14px}.activity-row{display:flex;align-items:flex-start;gap:11px}.dot{width:8px;height:8px;border-radius:50%;background:var(--purple);margin-top:6px;box-shadow:0 0 10px #a15cff}.activity-row p{margin:0}.activity-row small{color:var(--muted)}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:520px}.table th{text-align:left;color:#887e94;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:11px;border-bottom:1px solid var(--line)}.table td{padding:13px 11px;border-bottom:1px solid #25202e}.table tr:last-child td{border-bottom:0}.pill{display:inline-block;padding:4px 8px;border-radius:30px;font-size:10px;background:#30213e;color:#d2aaff}.pill.green{background:#15372d;color:#70e2b6}.pill.red{background:#401e2a;color:#ff9bad}.page{display:none}.page.active{display:block}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.field{background:#0d0b12;border:1px solid var(--line);border-radius:9px;padding:10px 12px;color:var(--text);min-width:180px;outline:none}.field:focus{border-color:var(--purple)}textarea.field{width:100%;min-height:90px;resize:vertical}.empty{padding:35px;text-align:center;color:var(--muted)}.notice{border:1px solid #533b6b;background:#21172c;color:#d9c5f0;padding:12px 14px;border-radius:10px;margin-bottom:16px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.form-grid label{display:grid;gap:6px;color:var(--muted);font-size:12px}.form-grid .full{grid-column:1/-1}.action-row{display:flex;gap:8px;flex-wrap:wrap}.mobile-menu{display:none}.footer-note{color:#746c7c;font-size:11px;margin-top:18px}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.sidebar{width:72px;padding:18px 9px}.brand{padding:0 6px 22px}.brand div:last-child,.nav-label,.nav button span:last-child,.profile div:last-child{display:none}.nav button{justify-content:center;padding:12px 4px}.side-bottom{padding:14px 5px}.main{margin-left:72px;width:calc(100% - 72px);padding:22px 15px}.topbar h1{font-size:21px}.status{display:none}.stats{gap:9px}.card{padding:14px}.stat-number{font-size:23px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">S</div><div><b>STEAL A SOUL</b><small>STAFF PORTAL</small></div></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span><span>Dashboard</span></button>
+    <button data-page="players"><span class="ico">♙</span><span>Players</span></button>
+    <button data-page="moderation"><span class="ico">⚖</span><span>Moderation</span></button>
+    <button data-page="souls"><span class="ico">✧</span><span>Soul Management</span></button>
+    <button data-page="staff"><span class="ico">♧</span><span>Staff Team</span></button>
+    <button data-page="applications"><span class="ico">▤</span><span>Applications</span></button>
+    <button data-page="reports"><span class="ico">⚑</span><span>Staff Reports</span></button>
+    <button data-page="announcements"><span class="ico">◉</span><span>Announcements</span></button>
+    <button data-page="logs"><span class="ico">☷</span><span>Moderation Logs</span></button>
+    <button data-page="settings"><span class="ico">⚙</span><span>Settings</span></button>
+  </nav>
+  <div class="side-bottom"><div class="profile"><div class="avatar">A</div><div><b>Staff Preview</b><small>Demo interface</small></div></div></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="eyebrow">STEAL A SOUL / STAFF WORKSPACE</div><h1 id="pageTitle">Dashboard</h1></div><div class="top-actions"><span class="status">● SYSTEM PREVIEW</span><button class="btn" onclick="alert('Connect secure authentication before enabling staff accounts.')">Staff Login</button></div></header>
+
+<section class="page active" id="dashboard">
+  <div class="notice"><b>Preview mode:</b> This is the website interface. Player moderation, Roblox actions, staff accounts and Discord features need a secure server connection before they can affect the live game.</div>
+  <div class="grid stats">
+    <div class="card"><div class="stat-top"><span>Players Online</span><span class="stat-icon">♙</span></div><div class="stat-number">—</div><div class="stat-foot">Connect Roblox game data</div></div>
+    <div class="card"><div class="stat-top"><span>Staff Online</span><span class="stat-icon">♧</span></div><div class="stat-number">—</div><div class="stat-foot">Staff presence unavailable</div></div>
+    <div class="card"><div class="stat-top"><span>Active Bans</span><span class="stat-icon">⛨</span></div><div class="stat-number" id="banCount">0</div><div class="stat-foot">Demo entries only</div></div>
+    <div class="card"><div class="stat-top"><span>Warnings</span><span class="stat-icon">⚑</span></div><div class="stat-number" id="warnCount">0</div><div class="stat-foot">Demo entries only</div></div>
+  </div>
+  <div class="grid content-grid">
+    <div class="card"><div class="card-head"><h2>Recent Activity</h2><span class="pill">LOCAL DEMO</span></div><div class="activity" id="activity"><div class="empty">No demo activity yet. Try adding a moderation record.</div></div></div>
+    <div class="card"><div class="card-head"><h2>Quick Actions</h2></div><div class="action-row"><button class="btn primary" onclick="showPage('moderation')">＋ New punishment</button><button class="btn" onclick="showPage('players')">Find a player</button><button class="btn" onclick="showPage('souls')">Soul tools</button></div><p class="muted" style="margin-top:18px">Use the sidebar to open each staff workspace. All current actions are local previews and do not connect to Roblox.</p></div>
+  </div>
+</section>
+
+<section class="page" id="players">
+  <div class="card"><div class="card-head"><h2>Player Lookup</h2><span class="pill">ROBLOX INTEGRATION REQUIRED</span></div><div class="toolbar"><input class="field" id="playerSearch" placeholder="Enter Roblox username or UserId"><button class="btn primary" onclick="lookupPlayer()">Search player</button></div><div id="playerResult" class="empty">Search results will appear here after Roblox integration is configured.</div></div>
+</section>
+
+<section class="page" id="moderation">
+  <div class="card"><div class="card-head"><h2>Create Moderation Record</h2><span class="pill">DEMO ONLY</span></div><div class="notice">This form records a local demo entry only. It does not kick, ban, mute, or otherwise affect a Roblox player.</div>
+  <form id="modForm" class="form-grid">
+    <label>Roblox username or UserId<input class="field" id="modPlayer" required placeholder="Player name / UserId"></label>
+    <label>Action<select class="field" id="modAction"><option>Warning</option><option>Kick</option><option>Temporary Ban</option><option>Permanent Ban</option><option>Mute</option><option>Unban</option></select></label>
+    <label class="full">Reason<textarea class="field" id="modReason" required placeholder="Explain the rule violation..."></textarea></label>
+    <label>Duration (if applicable)<input class="field" id="modDuration" placeholder="e.g. 1 day"></label>
+    <label>Staff member<input class="field" id="modStaff" value="Staff Preview" required></label>
+    <div class="full"><button class="btn primary" type="submit">Save demo record</button></div>
+  </form></div>
+</section>
+
+<section class="page" id="souls">
+  <div class="card"><div class="card-head"><h2>Soul Management</h2><span class="pill">GAME INTEGRATION REQUIRED</span></div><div class="notice">Soul spawning and inventory changes must be handled by trusted Roblox server scripts. These controls are layout previews until connected.</div>
+  <div class="form-grid">
+    <label>Target player<input class="field" id="soulPlayer" placeholder="Roblox username / UserId"></label>
+    <label>Soul type<select class="field" id="soulType"><option>Standard Soul</option><option>Rare Soul</option><option>Custom Soul</option></select></label>
+    <label>Quantity<input class="field" id="soulQty" type="number" min="1" max="10" value="1"></label>
+    <label>Action<select class="field" id="soulAction"><option>Spawn Soul</option><option>Give Soul</option><option>Remove Soul</option></select></label>
+    <div class="full"><button class="btn primary" onclick="soulPreview()">Preview soul action</button><p id="soulMessage" class="muted"></p></div>
+  </div></div>
+</section>
+
+<section class="page" id="staff">
+  <div class="card"><div class="card-head"><h2>Staff Directory</h2><span class="pill">SAMPLE ROLES</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Rank</th><th>Access level</th><th>Status</th></tr></thead><tbody>
+  <tr><td>Owner</td><td>Full access</td><td><span class="pill green">Protected</span></td></tr><tr><td>Co-Owner</td><td>Configurable</td><td><span class="pill">Example</span></td></tr><tr><td>Head Administrator</td><td>Senior moderation</td><td><span class="pill">Example</span></td></tr><tr><td>Administrator</td><td>Moderation tools</td><td><span class="pill">Example</span></td></tr><tr><td>Senior Moderator</td><td>Limited moderation</td><td><span class="pill">Example</span></td></tr><tr><td>Moderator</td><td>Basic moderation</td><td><span class="pill">Example</span></td></tr><tr><td>Trial Moderator</td><td>Restricted tools</td><td><span class="pill">Example</span></td></tr>
+  </tbody></table></div></div>
+</section>
+
+<section class="page" id="applications">
+  <div class="card"><div class="card-head"><h2>Staff Applications</h2><span class="pill">FORM TEMPLATE</span></div><form class="form-grid" onsubmit="applicationPreview(event)"><label>Roblox username<input class="field" required placeholder="Username"></label><label>Discord username<input class="field" required placeholder="name / @name"></label><label>Experience<input class="field" placeholder="Previous moderation experience"></label><label>Availability<input class="field" placeholder="When are you usually available?"></label><label class="full">Why do you want to join the staff team?<textarea class="field" required></textarea></label><label class="full">Why should we choose you?<textarea class="field" required></textarea></label><div class="full"><button class="btn primary">Preview application</button><p id="applicationMessage" class="muted"></p></div></form></div>
+</section>
+
+<section class="page" id="reports">
+  <div class="card"><div class="card-head"><h2>Staff Reports</h2><span class="pill">REPORT INBOX NOT CONNECTED</span></div><div class="empty">No reports are connected yet. Configure secure report storage and staff review permissions to enable this inbox.</div></div>
+</section>
+
+<section class="page" id="announcements">
+  <div class="card"><div class="card-head"><h2>Staff Announcements</h2><span class="pill">DISCORD INTEGRATION REQUIRED</span></div><form class="form-grid" onsubmit="announcementPreview(event)"><label class="full">Announcement title<input class="field" id="announcementTitle" required placeholder="Staff meeting / Important update"></label><label class="full">Message<textarea class="field" id="announcementBody" required placeholder="Write your announcement..."></textarea></label><div class="full"><button class="btn primary">Preview announcement</button><p id="announcementMessage" class="muted"></p></div></form></div>
+</section>
+
+<section class="page" id="logs">
+  <div class="card"><div class="card-head"><h2>Moderation Logs</h2><button class="btn" onclick="exportLogs()">Export demo logs</button></div><div class="table-wrap"><table class="table"><thead><tr><th>Date</th><th>Player</th><th>Action</th><th>Reason</th><th>Staff</th></tr></thead><tbody id="logRows"><tr><td colspan="5" class="muted">No demo records yet.</td></tr></tbody></table></div></div>
+</section>
+
+<section class="page" id="settings">
+  <div class="card"><div class="card-head"><h2>Portal Settings</h2></div><div class="notice">Before launch, configure a backend with secure staff authentication, role checks, database storage, and Roblox/Discord integrations.</div><div class="form-grid"><label>Portal name<input class="field" value="Steal a Soul Staff Portal" disabled></label><label>Theme<select class="field" disabled><option>Dark / Purple / Red</option></select></label><label class="full">Security checklist<textarea class="field" disabled>□ Server-side authentication\n□ Role-based permissions\n□ Roblox server integration\n□ Persistent moderation database\n□ Discord bot/webhook integration\n□ Audit logs</textarea></label></div></div>
+</section>
+<p class="footer-note">STEAL A SOUL STAFF PORTAL • Interface preview • Do not use demo records as official moderation records.</p>
+</main>
+</div>
+<script>
+var records = [];
+function showPage(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.toggle('active',p.id===id)});
+  document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('active',b.dataset.page===id)});
+  var labels={dashboard:'Dashboard',players:'Player Management',moderation:'Moderation',souls:'Soul Management',staff:'Staff Team',applications:'Staff Applications',reports:'Staff Reports',announcements:'Announcements',logs:'Moderation Logs',settings:'Settings'};
+  document.getElementById('pageTitle').textContent=labels[id]||'Dashboard';
+}
+document.getElementById('nav').addEventListener('click',function(e){var b=e.target.closest('button[data-page]');if(b)showPage(b.dataset.page)});
+document.getElementById('modForm').addEventListener('submit',function(e){
+ e.preventDefault();var r={date:new Date().toLocaleString(),player:document.getElementById('modPlayer').value.trim(),action:document.getElementById('modAction').value,reason:document.getElementById('modReason').value.trim(),staff:document.getElementById('modStaff').value.trim()};
+ if(!r.player||!r.reason||!r.staff)return;records.unshift(r);renderLogs();e.target.reset();document.getElementById('modStaff').value='Staff Preview';alert('Demo record saved locally in this page session.');
+});
+function renderLogs(){
+ var body=document.getElementById('logRows');body.innerHTML='';
+ records.forEach(function(r){var tr=document.createElement('tr');[r.date,r.player,r.action,r.reason,r.staff].forEach(function(v){var td=document.createElement('td');td.textContent=v;tr.appendChild(td)});body.appendChild(tr)});
+ if(!records.length)body.innerHTML='<tr><td colspan="5" class="muted">No demo records yet.</td></tr>';
+ document.getElementById('banCount').textContent=records.filter(function(r){return r.action.indexOf('Ban')>=0}).length;
+ document.getElementById('warnCount').textContent=records.filter(function(r){return r.action==='Warning'}).length;
+ var a=document.getElementById('activity');a.innerHTML='';
+ records.slice(0,5).forEach(function(r){var d=document.createElement('div');d.className='activity-row';var dot=document.createElement('span');dot.className='dot';var p=document.createElement('p');var b=document.createElement('b');b.textContent=r.action+' • '+r.player;var small=document.createElement('small');small.textContent=r.reason+' — '+r.date;p.appendChild(b);p.appendChild(document.createElement('br'));p.appendChild(small);d.appendChild(dot);d.appendChild(p);a.appendChild(d)});
+ if(!records.length)a.innerHTML='<div class="empty">No demo activity yet. Try adding a moderation record.</div>';
+}
+function lookupPlayer(){var q=document.getElementById('playerSearch').value.trim();document.getElementById('playerResult').textContent=q?'Lookup for "'+q+'" is a preview only. Connect a trusted Roblox data service to return verified player details.':'Enter a username or UserId first.'}
+function soulPreview(){var p=document.getElementById('soulPlayer').value.trim();var t=document.getElementById('soulType').value;var q=document.getElementById('soulQty').value;var a=document.getElementById('soulAction').value;document.getElementById('soulMessage').textContent=p?a+' preview: '+q+' × '+t+' for '+p+'. No game action was sent.':'Enter a target player first.'}
+function applicationPreview(e){e.preventDefault();document.getElementById('applicationMessage').textContent='Application form preview complete. Connect a database and review workflow to submit it officially.'}
+function announcementPreview(e){e.preventDefault();document.getElementById('announcementMessage').textContent='Preview: '+document.getElementById('announcementTitle').value+' — '+document.getElementById('announcementBody').value+' (not published)'}
+function exportLogs(){var csv='Date,Player,Action,Reason,Staff\n'+records.map(function(r){return [r.date,r.player,r.action,r.reason,r.staff].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')}).join('\n');var blob=new Blob([csv],{type:'text/csv'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='steal-a-soul-demo-logs.csv';a.click();URL.revokeObjectURL(url)}
+</script>
+</body>
+</html>
